@@ -22,7 +22,7 @@ Any non-parametric type can be associated with a convention. Note however, that 
     (define: (f . xs) : Number
       (apply + xs))
 
-A rest arg contains a list, but it does not have type `List`. Rather a rest arg declared with type `Number` contains a list of numbers. Because of this, conventional names for rest arguments must be defined explicitly with the `define-rest-type-convention` form:
+A rest arg contains a list, but it does not have the type `List`, rather it has the type `(Listof A)` where a is the type given in the definition form. A rest arg declared with type `Number` contains a list of numbers. Because of this, conventional names for rest arguments must be defined explicitly with the `define-rest-type-convention` form:
 
     (define-rest-type-convention Number xs)
     (define: (f . xs) : Number
