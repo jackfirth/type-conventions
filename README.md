@@ -37,7 +37,7 @@ While conventionally typed arguments cannot be parametric, the `define:` form ac
 
 The `define:` form also supports optional arguments, keyword arguments, and optional keyword arguments. As of this writing, the `define:` form does *not* support the following:
 
-1. Partially applicable functions, e.g. (define: ((f x) x) : Number (+ x x))
+1. Partially applicable functions, e.g. (define: ((f x) y) : Number (+ x y))
 2. Anonymous functions, e.g. (lambda: (f x) x)
 3. Parametrically typed shorthands.
 
