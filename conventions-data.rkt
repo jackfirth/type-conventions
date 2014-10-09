@@ -16,8 +16,16 @@
 (define add-convention (add conventions))
 (define add-convention-rest (add conventions-rest))
 
-(define ((ref conventions) arg-stx)
-  (datum->syntax arg-stx (hash-ref conventions (syntax->datum arg-stx))))
+(define ((ref conventions kind) arg-stx)
+  (datum->syntax arg-stx
+                 (hash-ref conventions
+                           (syntax->datum arg-stx)
+                           (thunk
+                            (raise-syntax-error 'type-conventions
+                                                (format "no ~a convention '~a'"
+                                                        kind
+                                                        (syntax->datum arg-stx))
+                                                arg-stx)))))
 
-(define ref-convention (ref conventions))
-(define ref-convention-rest (ref conventions-rest))
+(define ref-convention (ref conventions "argument"))
+(define ref-convention-rest (ref conventions-rest "rest argument"))
