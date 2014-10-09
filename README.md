@@ -3,7 +3,7 @@ type-conventions
 
 *A Typed Racket package for painless function definitions*
 
-It is frequently the case in a statically typed language that the type of a variable can be determined solely from it's name, such as a variable of type `Chair` named `chair`. Due to Typed Racket's support for macros, this pattern can be abstracted away. This package provides several forms for this purpose. For example:
+It is frequently the case in a statically typed language that the type of a variable can be determined solely from its name, such as a variable of type `Chair` named `chair`. Due to Typed Racket's support for macros, this pattern can be abstracted away. This package provides several forms for this purpose. For example:
 
     #lang typed/racket
     (require type-conventions)
