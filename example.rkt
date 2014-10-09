@@ -7,7 +7,7 @@
 
 (define-type Bit (U Zero One))
 
-(define-arg-conventions
+(define-type-conventions
   [Boolean bool]
   [Bit bit]
   [(Listof Bit) bits]
@@ -15,7 +15,7 @@
 
 ; Rest args commonly pluralize types because a rest arg declared to have type T is bound to a value of type (Listof T)
 
-(define-rest-arg-conventions
+(define-rest-type-conventions
   [Bit bits])
 
 ;;;; These definitions have strongly typed arguments, where types are assumed based on the defined arg conventions ;;;;

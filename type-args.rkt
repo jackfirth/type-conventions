@@ -2,10 +2,10 @@
 
 (require (for-syntax syntax/parse "formals-class.rkt"))
 
-(provide define-arg-convention
-         define-arg-conventions
-         define-rest-arg-convention
-         define-rest-arg-conventions
+(provide define-type-convention
+         define-type-conventions
+         define-rest-type-convention
+         define-rest-type-conventions
          (rename-out [define:: define:]))
 
 ;;;; TODO ;;;;
@@ -27,20 +27,20 @@
 
 ; Single convention forms, each defines one convention for one type
 
-(define-syntax define-arg-convention (convention-parser))
-(define-syntax define-rest-arg-convention (convention-parser #:rest #t))
+(define-syntax define-type-convention (convention-parser))
+(define-syntax define-rest-type-convention (convention-parser #:rest #t))
 
 ; Multi convention forms, each defines arbitrarily many conventions for arbitrarily many types
 
-(define-syntax define-arg-conventions
+(define-syntax define-type-conventions
   (syntax-parser
    [(_ (type-expr arg-id:id ...) ...)
-    #'(begin (define-arg-convention type-expr arg-id ...) ...)]))
+    #'(begin (define-type-convention type-expr arg-id ...) ...)]))
 
-(define-syntax define-rest-arg-conventions
+(define-syntax define-rest-type-conventions
   (syntax-parser
    [(_ (type-expr arg-id:id ...) ...)
-    #'(begin (define-rest-arg-convention type-expr arg-id ...) ...)]))
+    #'(begin (define-rest-type-convention type-expr arg-id ...) ...)]))
 
 ; Definition form that recognizes type conventions, shadows define: on export
 
