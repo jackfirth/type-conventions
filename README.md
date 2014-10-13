@@ -59,7 +59,7 @@ The form also allows for explicitly typed defaults values:
 As of this writing, the `define:` form does *not* support the following:
 
 1. Partially applicable functions, e.g. (define: ((f x) y) : Number (+ x y))
-2. Anonymous functions, e.g. (lambda: (f x) x)
+2. Anonymous functions, e.g. (lambda: (x) x)
 3. Parametrically typed shorthands.
 4. Explicitly typed rest arguments.
 
