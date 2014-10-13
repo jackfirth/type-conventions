@@ -2,3 +2,4 @@
 
 (define version "0.1")
 (define collection "type-conventions")
+(define deps '("base" "typed-racket-lib" "typed-racket-more" "rackunit-lib"))
