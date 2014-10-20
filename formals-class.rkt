@@ -47,16 +47,12 @@
 ; Rest form
 
 (define-syntax-class maybe-type-arg-rest
-  (pattern (~var arg (maybe-type-arg ref-convention-rest))
-           #:attr id #'arg.id
-           #:attr type #'arg.type))
+  (pattern id:id
+           #:attr type (ref-convention-rest #'id)))
 
 (module+ test
   (test-syntax-class maybe-type-arg-rest
-    #'test
-    #'[test : Test]
-    #'[test : (Test V)]
-    #'[test : (-> Number Number)]))
+    #'test))
 
 ; Keyword argument form
 
