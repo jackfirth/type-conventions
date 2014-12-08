@@ -14,7 +14,7 @@ It is frequently the case in a statically typed language that the type of a vari
 In the above, the `define-type-convetion` and `define:` forms are used to assume that the function argument `x` has type Number. This would be equivalent to the following:
 
     #lang typed/racket
-    (define: (f [x : Number])
+    (define: (f [x : Number]) : Number
       (+ x x))
 
 Type conventions are most useful when they let you eliminate large amounts of type annotation code that can make it difficult to grasp the true intent of a definition. Eliminating the unnecessary is one of the most important ways to express clarity. To assist this there exists a shorthand form of `define-type-convention` for defining many convetions at once, named `define-type-conventions`:
