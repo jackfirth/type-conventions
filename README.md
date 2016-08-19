@@ -11,7 +11,7 @@ It is frequently the case in a statically typed language that the type of a vari
     (define: (f x) : Number
       (+ x x))
 
-In the above, the `define-type-convetion` and `define:` forms are used to assume that the function argument `x` has type Number. This would be equivalent to the following:
+In the above, the `define-type-convention` and `define:` forms are used to assume that the function argument `x` has type Number. This would be equivalent to the following:
 
     #lang typed/racket
     (define: (f [x : Number]) : Number
